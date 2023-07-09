@@ -213,6 +213,14 @@ function displayScore() {
     scoreContainer.textContent = `Your score: ${quiz.getScore()}/${quiz.questions.length}`;
     scoreContainer.style.display = "block";
     retryButton.style.display = "block";
+
+    // Check if the score is less than 5/10
+    if (quiz.geyScore() < 5) {
+        scoreContainer.textContent += " You can retake the quiz to improve your score!";
+    }
+
+    scoreContainer.style.display = "block";
+    retryButton.style.display = "block";
 }
   
 // Initial rendering of the first question
