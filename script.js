@@ -25,9 +25,9 @@ class Quiz {
     getScore() {
       return this.score;
     }
-  }
+}
   
-  class Question {
+ class Question {
     constructor(text, choices, correctAnswer) {
       this.text = text;
       this.choices = choices;
@@ -37,10 +37,10 @@ class Quiz {
     isCorrect(choice) {
       return choice === this.correctAnswer;
     }
-  }
+}
   
-  // Array defining an array of Question objects (different questions)
-  const quizQuestions = [
+// Array defining an array of Question objects (different questions)
+const quizQuestions = [
     new Question(
       "What does HTML stand for?",
       [
@@ -150,19 +150,19 @@ class Quiz {
       ],
       "d) To toggle the state of a Bootstrap component, such as a dropdown or modal"
     )
-  ];
+];
   
-  const quiz = new Quiz(quizQuestions);
+const quiz = new Quiz(quizQuestions);
   
-  // Elements used (DOM)
-  const questionContainer = document.getElementById("question-container");
-  const choicesContainer = document.getElementById("choices-container");
-  const submitButton = document.getElementById("submit-btn");
-  const scoreContainer = document.getElementById("score-container");
-  const retryButton = document.getElementById("retry-btn");
+// Elements used (DOM)
+const questionContainer = document.getElementById("question-container");
+const choicesContainer = document.getElementById("choices-container");
+const submitButton = document.getElementById("submit-btn");
+const scoreContainer = document.getElementById("score-container");
+const retryButton = document.getElementById("retry-btn");
   
-  // Function to render the current question and choices
-  function renderQuestion() {
+// Function to render the current question and choices
+function renderQuestion() {
     if (quiz.isQuizEnd()) {
       displayScore();
     } else {
@@ -184,37 +184,51 @@ class Quiz {
         choicesContainer.appendChild(label);
       });
     }
-  }
+}
   
-  // Event listener for submit button
-  submitButton.addEventListener("click", () => {
+// Event listener for submit button
+submitButton.addEventListener("click", () => {
     const selectedChoice = document.querySelector('input[name="choice"]:checked');
     if (selectedChoice) {
       const choice = selectedChoice.value;
       quiz.selectAnswer(choice);
       renderQuestion();
     }
-  });
+});
   
-  // Event listener for retry button
-  retryButton.addEventListener("click", () => {
+// Event listener for retry button
+retryButton.addEventListener("click", () => {
     quiz.currentQuestionIndex = 0;
     quiz.score = 0;
     renderQuestion();
     scoreContainer.style.display = "none";
     retryButton.style.display = "none";
-  });
+});
   
-  // Function to display the final score
-  function displayScore() {
+// Function to display the final score
+function displayScore() {
     questionContainer.textContent = "Quiz completed!";
     choicesContainer.style.display = "none";
     submitButton.style.display = "none";
     scoreContainer.textContent = `Your score: ${quiz.getScore()}/${quiz.questions.length}`;
     scoreContainer.style.display = "block";
     retryButton.style.display = "block";
-  }
+}
   
-  // Initial rendering of the first question
-  renderQuestion();
+// Initial rendering of the first question
+renderQuestion();
   
+/*
+Encapsulation is the pillar that we used
+Encapsulation is achieved through the use of classes (Quiz and Question) to encapsulate related data (questions, score, current question index) 
+and behaviors (getting the current question, selecting an answer, checking correctness) into objects. The internal details and implementation of 
+these objects are hidden from the outside code, and access to their properties and methods is controlled through public interfaces (getCurrentQuestion(), 
+selectAnswer(), isCorrect(), etc.). This helps to organize and modularize the code, promote code reusability, and prevent direct manipulation of internal 
+data by external code.
+
+Additionally, the use of private class fields and methods (not explicitly shown in the code) can further enhance encapsulation by restricting access to 
+certain properties and behaviors within the class itself. However, in the provided code, all properties and methods are public, allowing external code to access them.
+
+Encapsulation is one of the fundamental pillars of OOP, along with Inheritance and Polymorphism.
+
+*/
