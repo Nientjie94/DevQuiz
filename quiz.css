@@ -34,18 +34,17 @@ body {
     font-weight: 100;
     cursor: pointer;
     transition: .5s;
-    position: absolute;
-    left: 7rem;
-    bottom: 1rem;
-    margin-top: 20rem;
-    
+    /*position: absolute;*/
+    /*left: 7rem;*/
+    /*bottom: 1rem;*/
+    /*margin-top: 20rem;*/
 }
 #retry-btn {
     width: 10rem;
     height: 2.5rem;
-    position: absolute;
-    left: 18rem;
-    bottom: 1rem;
+    /*position: absolute;*/
+    /*left: 18rem;*/
+    /*bottom: 1rem;*/
     background: #c40094;
     border-radius: 3rem;
     border: 0.1rem solid #fff;
@@ -55,9 +54,9 @@ body {
 .start-btn {
     width: 10rem;
     height: 3rem;
-    position: absolute;
-    left: 30rem;
-    bottom: 21rem;
+    /*position: absolute;*/
+    /*left: 30rem;*/
+    /*bottom: 21rem;*/
     background: #c40094;
     border-radius: 3rem;
     border: 0.1rem solid #fff;
@@ -90,9 +89,9 @@ body {
 #start-btn {
     width: 10rem;
     height: 3rem;
-    position: absolute;
-    left: 18rem;
-    bottom: 18rem;
+    /*position: absolute;*/
+    /*left: 18rem;*/
+    /*bottom: 18rem;*/
     background: #c40094;
     border-radius: 3rem;
     border: 0.1rem solid #fff;

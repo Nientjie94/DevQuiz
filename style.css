@@ -91,9 +91,6 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: .5s;
-    position: absolute;
-    left: 42rem;
-    bottom: 17rem;
 }
 .home-content .start-btn:hover {
     background: #09001d;
@@ -190,9 +187,6 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: .5s;
-    position: absolute;
-    left: 53rem;
-    bottom: 17rem;
 }
 .quiz-guide:hover {
     background: #490045;
